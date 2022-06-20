@@ -1,15 +1,17 @@
 <template>
    <div class="table-wrapper">
       <my-button @click="showDialog" class="btn-add">Добавить</my-button>
-      <table-users :chiefs="chiefs"/>
+      <tu :chiefs="chiefs"/>
    </div>
 </template>
 
 <script>
    import tableUsers from '@/components/table_users.vue'
+   import tu from '@/components/tableUsers.vue'
    export default {
       components: {
          tableUsers,
+         tu
       },
       props: {
          chiefs: {
@@ -21,7 +23,7 @@
       }, 
       methods: {
          showDialog() {
-            this.$emit('add')
+            this.$emit('open')
          }
       }
    }

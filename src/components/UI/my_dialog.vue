@@ -36,11 +36,10 @@
    }
    .dialog{
       position: absolute;
-      right: 5px;
-      top: 68px;
+      right: 95px;
+      top: 108px;
       background-color: #fff;
       border-radius: 5px;
-      min-height: 60px;
       min-width: 500px;
       padding: 23px;
    }

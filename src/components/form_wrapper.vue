@@ -2,25 +2,27 @@
    <div class="form-wrapper">
       <form class="form" @submit.prevent>
          <h2 class="form-heading">Добавление пользователя</h2>
-         <label class="form-label" for="name">
+         <my-label class="form-label" for="name">
             Имя
             <my-input 
+               v-model="chief.name"
                type="text"
                id="name"/>
-         </label>
-         <label class="form-label" for="tel">
+         </my-label>
+         <my-label class="form-label" for="tel">
             Телефон
             <my-input
+               v-model="chief.tel"
                type="tel"
                id="tel"/>
-         </label>
-         <label class="form-label" for="select">
+         </my-label>
+         <my-label class="form-label" for="select">
             Начальник
             <my-select
                id="select"
                :chiefs="chiefs"/>
-         </label>
-         <my-button class="btn-save">Сохранить</my-button>
+         </my-label>
+         <my-button @click="addUser" class="btn-save">Сохранить</my-button>
       </form>
    </div>
 </template>
@@ -30,6 +32,24 @@
       props: {
          chiefs: {
             type: Array,
+         },
+      },
+      data() {
+         return{
+            chief: {
+               name: '',
+               tel: '',
+            }
+         }
+      },
+      methods: {
+         addUser() {
+            this.chief.id = Date.now();
+            this.$emit('add', this.chief)
+            this.chief = {
+               name: '',
+               tel: '',
+            }
          },
       },
    }
@@ -46,12 +66,6 @@
    }
    .form-heading{
       margin-bottom: 20px;
-   }
-   .form-label{
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
    }
    .form-label:not(:last-child){
       margin-bottom: 30px;

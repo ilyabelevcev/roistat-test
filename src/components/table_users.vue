@@ -1,30 +1,18 @@
 <template>
    <table border="1" class="table">
-      <thead>
-         <tr>
-            <th>Имя</th>
-            <th>Телефон</th>
-         </tr>
-      </thead>
-      <tbody v-if="chiefs.length > 0">
-         <tr 
-            v-for= "chief in chiefs"
-            :key="chief.id"
-         >
-            <td>{{chief.name}}</td>
-            <td>{{chief.tel}}</td>
-         </tr>
-      </tbody>
-      <tbody v-else>
-         <tr>
-            <td>Пусто</td>
-         </tr>
-      </tbody>
+      <table-heading></table-heading>
+      <table-list :chiefs="chiefs"/>
    </table>
 </template>
 
 <script>
+import tableHeading from '@/components/table_users_heading.vue'
+import tableList from '@/components/table_users_list.vue'
 export default {
+   components: {
+      tableHeading,
+      tableList,
+   },
    props: {
       chiefs: {
          type: Array
@@ -37,8 +25,5 @@ export default {
    .table{ 
       width: 500px;
       border-collapse: collapse;
-   }
-   td {
-      padding: 24px 0px 4px 20px;
    }
 </style>

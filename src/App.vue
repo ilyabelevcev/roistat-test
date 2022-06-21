@@ -22,13 +22,7 @@
       },
       data() {
          return{
-            chiefs: [
-               {
-                  id: 0,
-                  name: 'Илья',
-                  tel: '+7 916 686 96 92',
-               },
-            ],
+            chiefs: [],
             dialog_visible: false,
          }
       },
@@ -36,15 +30,15 @@
          showDialog() {
             this.dialog_visible = true;
          },
+         saveUsers() {
+            const parsed = JSON.stringify(this.chiefs);
+            localStorage.setItem('chiefs', parsed);
+         },
          addUser(chief) {
             this.chiefs.push(chief);
             this.saveUsers();
             this.dialog_visible = false;
          },
-         saveUsers() {
-            const parsed = JSON.stringify(this.chiefs);
-            localStorage.setItem('chiefs', parsed);
-         }
       },
       mounted() {
          if (localStorage.getItem('chiefs')) {
@@ -82,8 +76,5 @@
       padding-top: 40px;
       display: flex;
       justify-content: flex-start;
-   }
-   td {
-      padding: 24px 0px 4px 20px;
    }
 </style>

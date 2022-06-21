@@ -1,22 +1,22 @@
 <template>
-   <div class="form-wrapper">
+   <div class="form__wrapper">
       <form class="form" @submit.prevent>
-         <h2 class="form-heading">Добавление пользователя</h2>
-         <my-label class="form-label" for="name">
+         <h2 class="form__heading">Добавление пользователя</h2>
+         <my-label class="form__label" for="name">
             Имя
             <my-input 
                v-model="chief.name"
                type="text"
                id="name"/>
          </my-label>
-         <my-label class="form-label" for="tel">
+         <my-label class="form__label" for="tel">
             Телефон
             <my-input
                v-model="chief.tel"
                type="tel"
                id="tel"/>
          </my-label>
-         <my-label class="form-label" for="select">
+         <my-label class="form__label" for="select">
             Начальник
             <my-select
                id="select"
@@ -56,7 +56,7 @@
 </script>
 
 <style scoped>
-   .form-wrapper{
+   .form__wrapper{
       position: relative;
    }
    .form{
@@ -64,10 +64,10 @@
       flex-direction: column;
       align-items: flex-start;
    }
-   .form-heading{
+   .form__heading{
       margin-bottom: 20px;
    }
-   .form-label:not(:last-child){
+   .form__label:not(:last-child){
       margin-bottom: 30px;
    }
 </style>

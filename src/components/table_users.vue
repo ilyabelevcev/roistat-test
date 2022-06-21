@@ -1,17 +1,17 @@
 <template>
-   <table border="1" class="table">
-      <table-heading></table-heading>
+   <div class="table">
+      <table-heading/>
       <table-list :chiefs="chiefs"/>
-   </table>
+   </div>
 </template>
 
 <script>
-import tableHeading from '@/components/table_users_heading.vue'
-import tableList from '@/components/table_users_list.vue'
+import tableHeading from '@/components/table_heading.vue'
+import tableList from '@/components/table_list.vue'
 export default {
    components: {
-      tableHeading,
       tableList,
+      tableHeading,
    },
    props: {
       chiefs: {
@@ -24,6 +24,5 @@ export default {
 <style scoped>
    .table{ 
       width: 500px;
-      border-collapse: collapse;
    }
 </style>

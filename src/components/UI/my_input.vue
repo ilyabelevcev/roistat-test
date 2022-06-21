@@ -2,7 +2,7 @@
    <input 
       :value="modelValue"
       @input="updateInput"
-      class="form-input">
+      class="form__input">
 </template>
 
 <script>
@@ -20,7 +20,7 @@
 </script>
 
 <style scoped>
-   .form-input{
+   .form__input{
       width: 280px;
       padding: 7px 14px;
       border: 1px solid #000;

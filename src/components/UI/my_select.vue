@@ -1,5 +1,5 @@
 <template>
-   <select name="selectParent" class="form-select">
+   <select name="selectParent" class="form__select">
       <option value=""></option>
       <option 
          v-for="chief in chiefs" 
@@ -23,7 +23,7 @@
 </script>
 
 <style scoped>
-   .form-select{
+   .form__select{
       width: 280px;
       padding: 7px 14px;
       border: 1px solid #000;

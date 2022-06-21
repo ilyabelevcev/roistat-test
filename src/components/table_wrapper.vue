@@ -1,17 +1,15 @@
 <template>
-   <div class="table-wrapper">
+   <div class="table__wrapper">
       <my-button @click="showDialog" class="btn-add">Добавить</my-button>
-      <tu :chiefs="chiefs"/>
+      <table-users :chiefs="chiefs"></table-users>
    </div>
 </template>
 
 <script>
    import tableUsers from '@/components/table_users.vue'
-   import tu from '@/components/tableUsers.vue'
    export default {
       components: {
          tableUsers,
-         tu
       },
       props: {
          chiefs: {
@@ -30,7 +28,7 @@
 </script>
 
 <style scoped>
-   .table-wrapper{
+   .table__wrapper{
       display: flex;
       flex-direction: column;
       align-items: flex-end;

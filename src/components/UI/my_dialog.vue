@@ -1,5 +1,5 @@
 <template>
-   <div class="dialog-wrapper" v-if="show === true" @click.stop="hideDialog">
+   <div class="dialog__wrapper" v-if="show === true" @click.stop="hideDialog">
       <div @click.stop class="dialog">
          <slot></slot>
          <button v-if="show === true" @click.stop="hideDialog" class="btn-close">&#10006;</button>
@@ -25,7 +25,7 @@
 </script>
 
 <style scoped>
-   .dialog-wrapper{
+   .dialog__wrapper{
       position: fixed;
       top: 0;
       bottom: 0;
